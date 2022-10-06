@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  db_everka:
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=everka
+      - POSTGRES_PASSWORD=everka
+      - POSTGRES_DB=everka
+  django_everka:
+    build: .
+    command: python manage.py runserver 0.0.0.0:9090
+    volumes:
+      - ./everka/:/usr/src/everka/
+    ports:
+      - 9090:9090
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db_everka
+volumes:
+  postgres_data:

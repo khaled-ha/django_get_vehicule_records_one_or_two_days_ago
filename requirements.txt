@@ -1,0 +1,11 @@
+django
+psycopg2-binary==2.8.3
+-i https://pypi.python.org/simple
+django-crispy-forms==1.7.2
+django-environ==0.4.5
+django-debug-toolbar
+werkzeug==0.14.1
+django-extensions
+django-mock-queries
+safety
+django-seed

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}REverka{% endblock %}</title>
+</head>
+<body>
+  <div id="header">
+    <a href="/" class="logo">REverka</a>
+  </div>
+  <div id="subheader">
+    <div class="cart">
+      
+    </div>
+  </div>
+  <div id="content">
+       {% for d in data %}
+       {% for x in d %}
+       last_points = [
+       {
+        “latitude”:{{x.latitude}}
+        <br>
+       <br>
+        “longitude”:{{x.longitude}}
+        <br>
+       <br>
+        “vehicle_plate”:{{x}}
+        <br>
+       <br>
+        “datetime”:{{x.datetime}}
+        <br>
+       <br>
+    },
+       <br>
+       {% endfor %}
+       <br>
+       <br>
+       {% endfor %}
+
+
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
